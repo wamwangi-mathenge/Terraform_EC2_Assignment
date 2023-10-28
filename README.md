@@ -13,3 +13,4 @@ Your task is to create a Terraform project that provisions an Amazon Web Service
 4. Create a subnet within the VPC and specify its CIDR block
 5. Define variables for the instance type, AMI, tags, VPC CIDR block and subnet CIDR block
 6. Use these variables in your Terraform configuration
+7. Create an output that displays the public IP address of the EC2 instance.
