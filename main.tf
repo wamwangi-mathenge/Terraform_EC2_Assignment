@@ -21,6 +21,15 @@ resource "aws_vpc" "project_vpc" {
   }
 }
 
+# Create a subnet
+resource "aws_subnet" "project_subnet" {
+  cidr_block = "10.0.0.0/16"
+  vpc_id = aws_vpc.project_vpc.id
+
+  tags = {
+    Name = "project_subnet"
+  }
+}
 
 # Create an EC2 instance
 resource "aws_instance" "project_instance" {
