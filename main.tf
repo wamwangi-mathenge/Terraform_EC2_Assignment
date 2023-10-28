@@ -12,7 +12,18 @@ provider "aws" {
 }
 
 
-resource "aws_instance" "name" {
+# Create a VPC cloud
+resource "aws_vpc" "project_vpc" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = "project_vpc"
+  }
+}
+
+
+# Create an EC2 instance
+resource "aws_instance" "project_instance" {
   ami = "ami-08bf0e5db5b302e19"
   instance_type = "t2.micro"
   tags = {
